@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <meta charset="utf8" />
+  <title>JavaScript feladat - Teszt</title>
+
+  <script type="module" type="text/javascript">
+    import { KarakterSzamolas, IrasjelSzamolas, ParatlanSzamokOsszege} from '/feladat.js';
+    window.KarakterSzamolas      = KarakterSzamolas;
+    window.IrasjelSzamolas       = IrasjelSzamolas;
+    window.ParatlanSzamokOsszege = ParatlanSzamokOsszege;
+  </script>
+</head>
+
+<body>
+  <div>
+    <h1>1. feladat</h1>
+    <p>A KarakterSzamolas elnevezésű függvény paraméterként egy szöveget kap. Számolja meg és adja vissza paraméterként
+      kapott szövegben a karaktereket (minden karakter számít, így például a szóközök is)!</p>
+    <h2>Futtatás:</h2>
+    <div>
+      <input type="text" value="Árvíztűrő ütvefúrógép" id="ksz1" />
+      <input type="button"
+        onclick="document.getElementById('kimenet1').innerHTML = KarakterSzamolas(document.getElementById('ksz1').value);"
+        value="KarakterSzamolas" />
+    </div>
+    <h2>Kimenet:</h2>
+    <div id="kimenet1"></div>
+
+    <hr />
+
+    <h1>2. feladat</h1>
+    <p>A IrasjelSzamolas elnevezesű függvény paraméterként egy szöveget kap. Számolja meg és adja vissza a paraméterként
+      kapott szövegben található írásjeleket!</p>
+    <p>A következő jeleket kell figyelembe vennie a számolás során:</p>
+    <ul>
+      <li>. azaz pont</li>
+      <li>, azaz vessző</li>
+      <li>: azaz kettőspont</li>
+      <li>; azaz pontosvessző</li>
+      <li>! azaz felkiáltójel</li>
+      <li>? azaz kérdőjel</li>
+      <li>- azaz gondolatjel</li>
+    </ul>
+    <h2>Teszt szöveg:</h2>
+    <div id="forras">
+      <ul>
+        <li><b>11 db karakter: </b>TÓTH L. (1999): Rávezető és közlő módszerek a tehetségesek oktatásában. In: BALOGH L.
+          (szerk.): Tehetség és iskola. Kossuth Egyetemi Kiadó, Debrecen. 130–143.<br /></li>
+        <li><b>6 db karakter: </b>BALOGH L. (szerk.) (1999): Tehetség és iskola. Kossuth Egyetemi Kiadó, Debrecen.<br />
+        </li>
+      </ul>
+    </div>
+    <h2>Futtatás:</h2>
+    <div>
+      <input type="text" value="BALOGH L. (szerk.) (1999): Tehetség és iskola. Kossuth Egyetemi Kiadó, Debrecen." id="ksz2" />
+      <input type="button"
+        onclick="document.getElementById('kimenet2').innerHTML = IrasjelSzamolas(document.getElementById('ksz2').value);"
+        value="IrasjelSzamolas" />
+    </div>
+    <h2>Kimenet:</h2>
+    <div id="kimenet2"></div>
+
+    <hr />
+
+    <h1>3. feladat</h1>
+    <p>A PáratlanSzámokÖsszege számok elnevezesű függvény paraméterként egy egész számokat tartalmazó tömböt kap.
+      Összegezze a paraméterként kapott tömbben található számok közül a páratlan számokat, és adja vissza!</p>
+   
+    <h2>Teszt adatok:</h2>
+    <div id="forras">
+      <ul>
+        <li>9: 1,2,3,4,5</li>
+        <li>25: 1,2,3,4,5,6,7,8,9</li>
+      </ul>
+    </div>
+  </div>
+  <h2>Futtatás:</h2>
+  <div>
+    <input type="text" value="1,2,3,4,5" id="ksz3" />
+    <input type="button"
+      onclick="document.getElementById('kimenet3').innerHTML = ParatlanSzamokOsszege(document.getElementById('ksz3').value.split(',').map(Number));"
+      value="ParatlanSzamokOsszege" />
+  </div>
+  <h2>Kimenet:</h2>
+  <div id="kimenet3"></div>
+</body>
+
+</html>
