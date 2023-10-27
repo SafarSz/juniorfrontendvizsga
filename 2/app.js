@@ -7,7 +7,7 @@ var app = express();
 // Statikus oldalak
 app.use(express.static(path.join(__dirname, 'web')));
 
-// Extra eszközök
+// Extra eszközök 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
